@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+nav {
+    background-color: #474E51;
+    height: 51px;
+}
+
+.navigation {
+    width: 80%;
+    margin: auto;
+}
+
+.navigation > div:not(.dropdown) {
+    float: left;
+    padding: 14px 16px;
+}
+
+.header {
+    margin: 70px 0 20px 0;
+}
+
+.timezone {
+    position: relative;
+    top: -40px;
+    z-index: 5;
+}
+
+#myModal {
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.caret {
+    display: inline-block;
+    margin-left: 30px;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    top: -3px;
+    position: relative;
+}
+
+.container th:first-child, .container td:first-child, 
+.container th:nth-child(2), .container td:nth-child(2) {
+    width: 15%;
+    border-right: 1px solid #4D4D4D;
+}
+
+.container tr td:last-child {
+    min-width: 790px;
+}
+
+.content th:last-child, .content td:last-child {
+    border-right: 0;
+}
+
+thead tr th{border-bottom: 1px solid #4D4D4D; padding: 15px;}
+
+tr td{border-bottom: 1px solid #4D4D4D;
+
+}
+
+th {
+    background-color: #00A99D;
+}
+
+tr:last-child > td {border-bottom: 0;}
+
+.container td { padding: 30px 5px; }
+
+.content td {
+    padding: 5px;
+    max-width: 500px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+   
+}
+
+.timezone {
+    width: 80%;
+    margin: auto;
+}
+
+#myModal-content {
+    left: 15%;
+    top: 10%;
+    border-radius: 9px;
+    background-color: #999999;
+    padding: 0;
+    border: 1px solid #888;
+    width: 70%;
+    max-height: 80%;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animationTop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animationTop;
+    animation-duration: 0.4s;
+}
+
+#myModal-content table {
+    width: 100%;
+}
+
+#myModal-content td {
+    padding: 15px 10px;
+}
+
+#myModal-content td:first-child {
+    border-right: 1px solid #4D4D4D;
+}
+
+.btn-circle {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 8px 8px;
+    font-size: 15px;
+    line-height: 1.428571429;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    outline: 0px !important;
+    user-select: none;
+}
+
+.UpToDate button {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+h3.UpToDate {
+    background-color: #5cb85c;
+}
+
+h3.Error { 
+    background-color: #f0ad4e;
+}
+
+h3.Delay {
+    background-color: #d9534f;
+}
+
+h3.EmptyData {
+    background-color: #4F639A;
+}
+
+h3 {
+    width: 450px;
+    margin: auto;
+}
+
+.UpToDate button:hover {
+    color: #fff;
+    background-color: #47a447;
+    border-color: #398439;
+}
+
+.Delay button {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.Delay button:hover {
+    color: #fff;
+    background-color: #d2322d;
+    border-color: #ac2925;
+}
+
+.EmptyData button {
+    color: #fff;
+    background-color: #4F639A;
+    border-color: #4F639A;
+}
+
+.Error button {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.Error button:hover { 
+    color: #fff;
+    background-color: #ed9c28;
+    border-color: #d58512;
+}
+
+.content {
+    display: none;
+    position: fixed;
+    border: 1px solid #AAA;
+    z-index: 1;
+    background-color: #999999;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 624px;
+}
+
+h4, h3 {
+    position: relative;
+    z-index: -1;
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 450px;
+    margin-top: 60px;
+}
+
+body {
+    background-color: #293135;
+    font-family: "Microsoft JhengHei UI", "Yu Gothic", Serif;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin: 100px 0 30px 0;
+}
+
+.refresh-node button {
+    margin-left: 30px;
+    height: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    width: 80%;
+    position: relative;
+    margin: auto;
+    z-index: 3;
+}
+
+nav ul li, .dropdown a {
+    float: left;
+    display: block;
+    padding: 14px 16px;
+}
+
+.dropdown-content > a:hover {
+    background-color: #58676D;
+    cursor: pointer;
+}
+
+.active, .navigation > div:not(.dropdown):hover:not(.active) {
+    background-color: #58676D;
+    border-top: 3px solid #00A99D;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: #474E51;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 3;
+    top: 50px;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 35px 14px 16px;
+    text-align: left;
+    float: initial;
+}
+
+
+li a, .dropdown-toggle {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0} 
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(0,169,157); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,169,157,0.4); 
+}
+
+
+.displayIST.hide, .displayPST.hide {
+      display:none;
+}
+
+.timezone span{
+    float: right;
+    background: #293135;
+    cursor: pointer;
+    padding: 5px 20px;
+    width: 75px;
+    text-align: center;
+}
+
+.timezone span:hover {
+    background: #70db70;
+}
+
+.timezone-active {
+    background-color: #00A99D !important;
+}

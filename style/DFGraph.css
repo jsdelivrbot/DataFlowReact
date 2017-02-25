@@ -1,0 +1,9 @@
+.DFGraph {
+    position: relative;
+    overflow: hidden; 
+    padding: 0 !important;
+}
+
+.DFGraph > .node {
+    position: absolute; display: block;
+}
