@@ -14,18 +14,25 @@ nav {
     margin: auto;
 }
 
-.navigation > div:not(.dropdown) {
+.navigation > div:not(.dropdown):not(.timezone) {
     float: left;
     padding: 14px 16px;
 }
 
 .header {
-    margin: 70px 0 20px 0;
+    margin: 50px auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header div {
+    float: left;
 }
 
 .timezone {
     position: relative;
-    top: -40px;
+    top: 10px;
     z-index: 5;
 }
 
@@ -89,12 +96,6 @@ tr:last-child > td {border-bottom: 0;}
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
-   
-}
-
-.timezone {
-    width: 80%;
-    margin: auto;
 }
 
 #myModal-content {
@@ -146,19 +147,26 @@ tr:last-child > td {border-bottom: 0;}
     border-color: #4cae4c;
 }
 
-h3.UpToDate {
+span.UpToDate {
     background-color: #5cb85c;
 }
 
-h3.Error { 
+.header > div > span:first-child {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+span.Error { 
     background-color: #f0ad4e;
 }
 
-h3.Delay {
+span.Delay {
     background-color: #d9534f;
 }
 
-h3.EmptyData {
+span.EmptyData {
     background-color: #4F639A;
 }
 
@@ -265,7 +273,7 @@ nav ul li, .dropdown a {
     cursor: pointer;
 }
 
-.active, .navigation > div:not(.dropdown):hover:not(.active) {
+.active, .navigation > div:not(.dropdown):not(.timezone):hover:not(.active) {
     background-color: #58676D;
     border-top: 3px solid #00A99D;
     cursor: pointer;
@@ -273,7 +281,7 @@ nav ul li, .dropdown a {
 
 .dropdown-content {
     display: none;
-    position: fixed;
+    position: absolute;
     background-color: #474E51;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 3;

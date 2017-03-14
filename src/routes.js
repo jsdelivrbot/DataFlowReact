@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import DataFlowApp from './components/app-dataflow';
+import DataFlowApp from './containers/app-dataflow';
 
 import App from './components/app';
 

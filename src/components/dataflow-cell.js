@@ -2,8 +2,21 @@ import React from 'react';
 import DataFlowGraph from '../libraries/dataflowGraph';
 
 export default class extends React.Component {
-    shouldComponentUpdate() {
-        return false;
+    // shouldComponentUpdate() {
+    //     return false;
+    // }
+    constructor(props) {
+        super(props);
+        
+        this.timezoneIsChanged = false;
+    }
+
+    componentWillUpdate(nextProps, nextStates) {
+        if (this.timezoneIsChanged == nextProps.isPST) {
+            this.timezoneIsChanged = !this.timezoneIsChanged;
+
+            //this.initializeGraph();
+        }
     }
 
     addEventColorPath() {
@@ -60,8 +73,8 @@ export default class extends React.Component {
         }
     }
 
-    componentDidMount() {
-        const id = this.props.keyId, data = this.props.dataFlowInfo,
+    initializeGraph() {
+        const id = this.props.keyId, data = this.props.dataFlowInfo, pst = this.props.isPST,
             graph_structure = {
                 chart: {
                     rowSeparation: 60,
@@ -75,15 +88,23 @@ export default class extends React.Component {
                     padding: 15
                 },
                 graphStructure: data.map(metric => {
-                    return {
+                    var struct = {
                         key: metric.step,
                         innerHTML: "<button class='btn-circle'>" + metric.step + "</button>",
-                        HTMLclass: Math.random() > 0.5 ? "UpToDate" : "Delay",
+                        HTMLclass: (metric.status + ' PST'),
                         nextNodes: metric.nextNodes || []
                     };
+                    if (!pst) {
+                        struct.HTMLclass = (metric.statusIST + ' IST');
+                    }
+                    return struct;
                 })
             };
         DataFlowGraph(graph_structure, this.addEventColorPath.bind(this));
+    }
+
+    componentDidMount() {
+        this.initializeGraph();
     }
 
     renderPopupWindow() {
@@ -101,7 +122,7 @@ export default class extends React.Component {
                         </tr>
                         <tr>
                             <td>Metric Value</td>
-                            <td>{data.revenue}</td>
+                            <td>{"$" + data.revenue.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}</td>
                         </tr>
                         <tr>
                             <td>Query</td>
